@@ -1,0 +1,9 @@
+Building Denarius
+
+See doc/readme-qt.rst for instructions on building Denarius-qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Denarius.
+
+See doc/build-*.txt for instructions on building Denarius,
+the intended-for-services, no-graphical-interface, reference
+implementation of Denarius.
