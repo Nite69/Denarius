@@ -1009,6 +1009,11 @@ unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const 
         unsigned int TimeDaySeconds = 60 * 60 * 24;
         int64 PastSecondsMin = TimeDaySeconds * 0.0025;
         int64 PastSecondsMax = TimeDaySeconds * 0.03125;
+	// PastSecondsMin *has* to be more than 22 blocks, was 3
+	if (pindexLast->nHeight > 40000) {
+		PastSecondsMin *= 8;
+		PastSecondsMax *= 8;
+	}
         uint64 PastBlocksMin = PastSecondsMin / BlocksTargetSpacing;
         uint64 PastBlocksMax = PastSecondsMax / BlocksTargetSpacing;
         
